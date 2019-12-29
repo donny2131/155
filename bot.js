@@ -1,11 +1,8 @@
 const Discord = require('discord.js') , shadow = new Discord.Client()
 , block = new Set()
 , ran = ["Come Here : ",,"Come Here :"]
-, msg = '' تحرى شوقًا ، فدائمًا تعود المياه لمجاريها ،
-;ومن طول الغيبات .. جاب الغنايم.
-**| await . .** 
-- https://discord.gg/7xUASzg'
-, token = "NjYwODkxOTg0ODI2NzI4NDU5.XgjfOg.qnrZk-0zk6-OZ-uROLj66ftZ3ig";
+, msg = 'https://discord.gg/7xUASzg'
+, token = "NjYwODkxOTg0ODI2NzI4NDU5.Xgjmng.-DeWxbOYr9oSgkugD4r6JrHr7Aw";
 shadow.on('ready', () => {
   console.log(`by shadow Logged in as ${shadow.user.tag}!`);
 });
