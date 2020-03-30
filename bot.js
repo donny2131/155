@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "..";
+var prefix = ".";
 client.on('message', message => {
 if(!message.content.startsWith(prefix)) return;
 let command = message.content.split(" ")[0];
@@ -14,7 +14,7 @@ let broadcastt = new Discord.RichEmbed().setColor('#36393e')
 .setDescription(`**Please type the number of your chose**`)
 .setFooter('you can add to the message [user] = mention the user')
 message.channel.send(broadcastt).then(msg => {
-message.channel.awaitMessages(filter, {max: 1,time: 90000,errors: ['time']})
+message.channel.awaitMessages(filter, {max: 1,time: 5000,errors: ['time']})
 .then(collected => {if(collected.first().content === '1') {msg.delete(),message.channel.send(`**☑ Broadcast begin send....**`).then(m => {
 message.guild.members.map(member => {setTimeout(() => {member.send(args.replace('[user]',member).replace('[icon]',`https://cdn.discordapp.com/icons/${message.guild.id}/${message.guild.icon}.png?size=1024`)).then(() => {}).catch((err) => {});},);});})}
 if(collected.first().content === '2') {msg.delete(),message.channel.bulkDelete(1),message.channel.send(`**☑ Broadcast begin send.**`);
@@ -48,15 +48,4 @@ message.channel.bulkDelete(2);msgg.delete();message.channel.send('**☑ Broadcas
 })}).catch(myst =>{msgg.edit('Timed out.');})})
 }if(collected.first().content === '5'){} // لو تبي تضيف شي خامس :]
 }).catch(mys =>{msg.edit('Timed out to chose.')})})}});
-
-client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Desert Bot- Script By : un`);
-        console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : unn ' `);
-    console.log(`----------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setStatus("idle")
-});
-
 client.login(process.env.BOT_TOKEN);
